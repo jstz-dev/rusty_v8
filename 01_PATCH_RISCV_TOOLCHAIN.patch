@@ -1,0 +1,13 @@
+diff --git a/toolchain/linux/BUILD.gn b/toolchain/linux/BUILD.gn
+index 00e866896..7bb1d9a25 100644
+--- a/toolchain/linux/BUILD.gn
++++ b/toolchain/linux/BUILD.gn
+@@ -306,7 +306,7 @@ clang_toolchain("clang_riscv64") {
+ }
+ 
+ gcc_toolchain("riscv64") {
+-  toolprefix = "riscv64-linux-gnu"
++  toolprefix = "riscv64-unknown-linux-musl"
+ 
+   cc = "${toolprefix}-gcc"
+   cxx = "${toolprefix}-g++"

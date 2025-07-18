@@ -1,0 +1,16 @@
+target_os="linux"
+target_cpu="riscv64"
+v8_target_cpu="riscv64"
+is_clang=false
+use_sysroot=false
+use_custom_libcxx=false
+is_component_build=false 
+is_debug=false
+symbol_level=0
+treat_warnings_as_errors=false
+remove_gn_flags=["-gdwarf-4","-gline-tables-only"]
+v8_deprecation_warnings=false
+v8_enable_sandbox=false
+v8_enable_pointer_compression=false
+cppgc_enable_caged_heap=false
+cppgc_enable_larger_cage=false
