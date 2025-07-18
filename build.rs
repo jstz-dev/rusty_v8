@@ -20,6 +20,13 @@ use std::process::Stdio;
 use which::which;
 
 fn main() {
+
+  let target_arch = std::env::var("CARGO_CFG_TARGET_ARCH").unwrap();
+  if target_arch == "riscv64" {
+    println!("cargo:rustc-link-arg=-static");
+    println!("cargo:rustc-link-arg=-latomic");
+    println!("cargo:rustc-link-lib=atomic");
+  }
   println!("cargo:rerun-if-changed=.gn");
   println!("cargo:rerun-if-changed=BUILD.gn");
   println!("cargo:rerun-if-changed=src/binding.cc");
@@ -166,6 +173,7 @@ fn build_binding() {
     "cargo:rustc-env=RUSTY_V8_SRC_BINDING_PATH={}",
     out_path.display()
   );
+
   bindings
     .write_to_file(out_path)
     .expect("Couldn't write bindings!");
