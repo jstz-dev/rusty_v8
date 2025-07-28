@@ -14,5 +14,18 @@ python build/install-build-deps.py
 # Required on linux (see https://github.com/jstz-dev/rusty_v8?tab=readme-ov-file#build-v8-from-source)
 sudo apt install libglib2.0-dev
 
-(cd build && git apply ../01_PATCH_RISCV_TOOLCHAIN.patch)
-(cd v8 && git apply ../02_PATCH_V8_INTERNAL.patch)
+set +e
+
+(cd build && git apply ../0001_BUILD_PATCH_RISCV_TOOLCHAIN.patch)
+
+# Apply v8 patches
+v8_patches=(
+	"0002_V8_PATCH_INTERNAL.patch"
+	"0003_V8_DO_NOT_FORCE_ENABLE_PTR_CMPRSN.patch"
+	"0004_V8_SWITCH_OFF_LARGER_CAGED_HEAPS.patch"
+)
+cd v8
+for patch in "${v8_patches[@]}"; do
+	git apply "../$patch"
+done
+cd ..

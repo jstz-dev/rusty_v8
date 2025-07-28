@@ -12,6 +12,6 @@ treat_warnings_as_errors=false
 remove_gn_flags=["-gdwarf-4","-gline-tables-only"]
 v8_deprecation_warnings=false
 v8_enable_sandbox=false
-v8_enable_pointer_compression=true
+v8_enable_pointer_compression=false
 cppgc_enable_caged_heap=true
 cppgc_enable_larger_cage=false

@@ -1,0 +1,13 @@
+diff --git a/BUILD.gn b/BUILD.gn
+index 87b212921b..322447bcd6 100644
+--- a/BUILD.gn
++++ b/BUILD.gn
+@@ -1024,7 +1024,7 @@ if (cppgc_enable_caged_heap) {
+   # Pointer compression regresses binary size on Fuchsia by about 300K.
+   # However, the change improves Oilpan memory by 15-20% (2-4% of PMF),
+   # which is beneficial for memory-impoverished platforms.
+-  cppgc_enable_pointer_compression = true
++  # cppgc_enable_pointer_compression = true
+ }
+ if (cppgc_enable_young_generation) {
+   enabled_external_cppgc_defines += [ "CPPGC_YOUNG_GENERATION" ]
