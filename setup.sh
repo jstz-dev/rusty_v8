@@ -23,6 +23,7 @@ v8_patches=(
 	"0002_V8_PATCH_INTERNAL.patch"
 	"0003_V8_DO_NOT_FORCE_ENABLE_PTR_CMPRSN.patch"
 	"0004_V8_SWITCH_OFF_LARGER_CAGED_HEAPS.patch"
+	"0005_V8_ALIGN_CAGED_HEAP_TO_PAGE_SIZE.patch"
 )
 cd v8
 for patch in "${v8_patches[@]}"; do
