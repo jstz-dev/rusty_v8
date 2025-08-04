@@ -1,0 +1,13 @@
+diff --git a/include/cppgc/internal/api-constants.h b/include/cppgc/internal/api-constants.h
+index 8a0bb082fb..28b6b09464 100644
+--- a/include/cppgc/internal/api-constants.h
++++ b/include/cppgc/internal/api-constants.h
+@@ -70,7 +70,7 @@ constexpr size_t kCagedHeapMaxReservationSize =
+     kCagedHeapDefaultReservationSize;
+ #endif  // !defined(CPPGC_POINTER_COMPRESSION)
+ #endif  // !defined(CPPGC_2GB_CAGE)
+-constexpr size_t kCagedHeapReservationAlignment = kCagedHeapMaxReservationSize;
++constexpr size_t kCagedHeapReservationAlignment = kPageSize;
+ #endif  // defined(CPPGC_CAGED_HEAP)
+ 
+ static constexpr size_t kDefaultAlignment = sizeof(void*);
